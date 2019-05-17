@@ -34,18 +34,23 @@ public class FormTest {
     @Test
     public void fillForm() {
         driver.get("https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html");
+
         WebElement firstName = driver.findElement(By.id("first-name"));
+        String nameOfFirstName = firstName.getAttribute("name");
+        String firstNameValue = "Karol";
+        workWithWebelement(firstName, nameOfFirstName, firstNameValue);
         if (firstName.isDisplayed()) {
             firstName.sendKeys("Karol");
         }
 
         WebElement lastName = driver.findElement(By.id("last-name"));
-        String name = lastName.getAttribute("name");
-        String inputValue = "Kowalski";
-        workWithWebelement(lastName, name, inputValue);
+        String nameOfLastName = lastName.getAttribute("name");
+        String lastNameValue = "Kowalski";
+        workWithWebelement(lastName, nameOfLastName, lastNameValue);
         if (lastName.isDisplayed()) {
             lastName.sendKeys("Kowalski");
         }
+
         List<WebElement> elements = driver.findElements(By.cssSelector(".radio-inline"));
         for (WebElement element : elements) {
             if (element.getText().equals("Female")) {
