@@ -1,5 +1,4 @@
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -39,17 +38,11 @@ public class FormTest {
         String nameOfFirstName = firstName.getAttribute("name");
         String firstNameValue = "Karol";
         workWithWebelement(firstName, nameOfFirstName, firstNameValue);
-        if (firstName.isDisplayed()) {
-            firstName.sendKeys("Karol");
-        }
 
         WebElement lastName = driver.findElement(By.id("last-name"));
         String nameOfLastName = lastName.getAttribute("name");
         String lastNameValue = "Kowalski";
         workWithWebelement(lastName, nameOfLastName, lastNameValue);
-        if (lastName.isDisplayed()) {
-            lastName.sendKeys("Kowalski");
-        }
 
         List<WebElement> elements = driver.findElements(By.cssSelector(".radio-inline"));
         for (WebElement element : elements) {
@@ -73,12 +66,21 @@ public class FormTest {
         String nameAddress = address.getAttribute("name");
         String addressValue = "Prosta 51";
         workWithWebelement(address, nameAddress, addressValue);
-        if (address.isDisplayed()) {
-            address.sendKeys("Prosta 51");
+
+
+        WebElement email = driver.findElement(By.id("email"));
+        String nameEmail = email.getAttribute("name");
+        String emailValue = "karol.kowalski@mailinator.com";
+        workWithWebelement(email, nameEmail, emailValue);
+
+        WebElement password = driver.findElement(By.id("password"));
+        String passwordName = password.getAttribute("name");
+        String passwordValue = "Pass123";
+        workWithWebelement(password, passwordName, passwordValue);
+        if (password.isDisplayed()) {
+            password.sendKeys("Pass123");
         }
 
-        driver.findElement(By.id("email")).sendKeys("karol.kowalski@mailinator.com");
-        driver.findElement(By.id("password")).sendKeys("Pass123");
         driver.findElement(By.id("company")).sendKeys("Coders Lab");
         Select roleDropdown = new Select(driver.findElement(By.name("role")));
         roleDropdown.selectByVisibleText("Manager");
