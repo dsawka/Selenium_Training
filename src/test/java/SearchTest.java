@@ -52,5 +52,5 @@ public class SearchTest {
         String title = driver.getTitle();
         assertEquals("Mistrzostwa Świata w piłce nożnej 2018 - Bing", title);
     }
-
+// te same uwagi co w klasie FormTest
 }
