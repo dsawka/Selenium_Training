@@ -34,7 +34,6 @@ public class FormTest {
     @Test
     public void fillForm() {
         driver.get("https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html");
-
         WebElement firstName = driver.findElement(By.id("first-name"));
         String nameOfFirstName = firstName.getAttribute("name");
         String firstNameValue = "Karol";
@@ -52,6 +51,7 @@ public class FormTest {
         }
 
         List<WebElement> elements = driver.findElements(By.cssSelector(".radio-inline"));
+        //css selektor(.radio-inline) wyekstraktuj do stałej
         for (WebElement element : elements) {
             if (element.getText().equals("Female")) {
                 element.click();
@@ -79,11 +79,8 @@ public class FormTest {
 
         String message = driver.findElement(By.id("submit-msg")).getText();
         assertEquals("Successfully submitted!",message);
-
-
-
-
-
+                
+        
 //        System.out.println(elements.get(0).getText());
 //        System.out.println(elements.get(1).getText());
 //        System.out.println(elements.get(2).getText());
@@ -116,7 +113,6 @@ public class FormTest {
         listID.add("last-name");
         listID.add("gender");
         return listID;
-
     }
 
     @Test
@@ -127,7 +123,6 @@ public class FormTest {
         String emailError = driver.findElement(By.id("email-error")).getText();
         assertEquals("Please enter a valid email address.", emailError);
         System.out.println(emailError);
-
     }
 
     @Test
@@ -181,7 +176,8 @@ public class FormTest {
             webElement.sendKeys(inputValue);
             System.out.println(name + " : " + inputValue);
         }
-
-    }
-
+    }    
+            // generalna UWAGA - wszystie stringi mają być wyekstraktowane do stałych
+            // dorób metodę podobną do workWithWebElement(), tylko dla dropDownów
+            // metody nie mogą się nazywać np. validateEmail_2 :-)
 }
