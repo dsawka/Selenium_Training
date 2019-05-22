@@ -168,7 +168,7 @@ public class FormTest {
             }
         }
         driver.findElement(By.id("dob")).sendKeys("05/22/2020");
-        // możliwość wpisania przyszłej daty urodzeniagit 
+        // możliwość wpisania przyszłej daty urodzeniagit
         driver.findElement(By.id("address")).sendKeys("!@#");
         // address przyjmuje znaki specjalne
         driver.findElement(By.id("email")).sendKeys("123@123");
