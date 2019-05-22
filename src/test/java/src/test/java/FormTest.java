@@ -1,4 +1,5 @@
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -33,54 +34,40 @@ public class FormTest {
     @Test
     public void fillForm() {
         driver.get("https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html");
-
         WebElement firstName = driver.findElement(By.id("first-name"));
         String nameOfFirstName = firstName.getAttribute("name");
         String firstNameValue = "Karol";
         workWithWebelement(firstName, nameOfFirstName, firstNameValue);
+        if (firstName.isDisplayed()) {
+            firstName.sendKeys("Karol");
+        }
 
         WebElement lastName = driver.findElement(By.id("last-name"));
         String nameOfLastName = lastName.getAttribute("name");
         String lastNameValue = "Kowalski";
         workWithWebelement(lastName, nameOfLastName, lastNameValue);
+        if (lastName.isDisplayed()) {
+            lastName.sendKeys("Kowalski");
+        }
 
         List<WebElement> elements = driver.findElements(By.cssSelector(".radio-inline"));
+        //css selektor(.radio-inline) wyekstraktuj do stałej
         for (WebElement element : elements) {
             if (element.getText().equals("Female")) {
                 element.click();
                 break;
             }
         }
-
-//          zamiast pętli for each, zwykły for
 //        for (int i = 0; i < elements.size(); i++) {
 //            if(elements.get(i).getText().equals("Female")){
 //                elements.get(i).click();
 //                break;
 //            }
 //        }
-
         driver.findElement(By.id("dob")).sendKeys("05/22/2010");
-
-        WebElement address = driver.findElement(By.id("address"));
-        String nameAddress = address.getAttribute("name");
-        String addressValue = "Prosta 51";
-        workWithWebelement(address, nameAddress, addressValue);
-
-
-        WebElement email = driver.findElement(By.id("email"));
-        String nameEmail = email.getAttribute("name");
-        String emailValue = "karol.kowalski@mailinator.com";
-        workWithWebelement(email, nameEmail, emailValue);
-
-        WebElement password = driver.findElement(By.id("password"));
-        String passwordName = password.getAttribute("name");
-        String passwordValue = "Pass123";
-        workWithWebelement(password, passwordName, passwordValue);
-        if (password.isDisplayed()) {
-            password.sendKeys("Pass123");
-        }
-
+        driver.findElement(By.id("address")).sendKeys("Prosta 51");
+        driver.findElement(By.id("email")).sendKeys("karol.kowalski@mailinator.com");
+        driver.findElement(By.id("password")).sendKeys("Pass123");
         driver.findElement(By.id("company")).sendKeys("Coders Lab");
         Select roleDropdown = new Select(driver.findElement(By.name("role")));
         roleDropdown.selectByVisibleText("Manager");
@@ -92,11 +79,8 @@ public class FormTest {
 
         String message = driver.findElement(By.id("submit-msg")).getText();
         assertEquals("Successfully submitted!",message);
-
-
-
-
-
+                
+        
 //        System.out.println(elements.get(0).getText());
 //        System.out.println(elements.get(1).getText());
 //        System.out.println(elements.get(2).getText());
@@ -129,7 +113,6 @@ public class FormTest {
         listID.add("last-name");
         listID.add("gender");
         return listID;
-
     }
 
     @Test
@@ -140,7 +123,6 @@ public class FormTest {
         String emailError = driver.findElement(By.id("email-error")).getText();
         assertEquals("Please enter a valid email address.", emailError);
         System.out.println(emailError);
-
     }
 
     @Test
@@ -194,7 +176,8 @@ public class FormTest {
             webElement.sendKeys(inputValue);
             System.out.println(name + " : " + inputValue);
         }
-
-    }
-
+    }    
+            // generalna UWAGA - wszystie stringi mają być wyekstraktowane do stałych
+            // dorób metodę podobną do workWithWebElement(), tylko dla dropDownów
+            // metody nie mogą się nazywać np. validateEmail_2 :-)
 }
