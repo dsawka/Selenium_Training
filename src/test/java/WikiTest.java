@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class WikiTest {
-
+// niepotrzebna pusta linia
 
     private static final String LOCATOR = "main-page-column1";
     private static final String MAIN_PAGE_CONTENT = "main-page-content";
@@ -93,7 +93,7 @@ public class WikiTest {
         searchInput.sendKeys("Selenium");
         searchInput.submit();
     }
-
+// te same uwagi co w klasie FormTest i SearchTest
 }
 
 
