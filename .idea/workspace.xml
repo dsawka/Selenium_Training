@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -135,30 +135,6 @@
             <path>
               <item name="KursSelenium" type="b2602c69:ProjectViewProjectNode" />
               <item name="KursSelenium" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KursSelenium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KursSelenium" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KursSelenium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KursSelenium" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KursSelenium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KursSelenium" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KursSelenium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KursSelenium" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,7 +286,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1979" y="-4" width="1861" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49937734" visible="true" weight="0.17465565" />
       <window_info id="Structure" order="1" sideWeight="0.5006227" side_tool="true" weight="0.2528428" />
@@ -455,8 +430,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
